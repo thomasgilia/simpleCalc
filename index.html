@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-inline">
+            <div class="container">
+                <H1>Calculator</H1>
+                <H4>Input values</H4>
+                <div class="input">
+                    <input type="text" class="form-control" id="float1" placeholder="0">
+                    <input type="text" class="form-control" id="float2" placeholder="0">
+                </div>
+                <br>
+                <div>
+                    <label for="operator"></label>
+
+                    <select name="operator" id="operator" size="4">
+                        <option value="add">+</option>
+                        <option value="subtract">-</option>
+                        <option value="multiply">*</option>
+                        <option value="divide">/</option>
+                    </select>
+                    <!-- <button type="button" class="btn btn-warning" onclick="add()">Add</button>
+                    <button type="button" class="btn btn-warning">Subtract</button>
+                    <button type="button" class="btn btn-warning">Multiply</button>
+                    <button type="button" class="btn btn-warning">Divide</button> -->
+
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-danger" onclick="calculate()">Calculate</button>
+
+                </div>
+            </div>
+        </form>
+        <div class="container">
+            <h2 id="result"></h2>
+        </div>
+    </div>
+    <script>
+        // let operator = "fgbhgtrfd";
+        // let answer;
+        // let xxx = function add() {
+        //     let operator = "dkkd";
+        //     // operator += "add";
+        //     // console.log(operator);
+        //     return operator;
+        // }
+
+        // console.log(operator);
+        function calculate() {
+            let float1 = parseFloat(document.getElementById("float1").value);
+            let float2 = parseFloat(document.getElementById("float2").value);
+            let operator = document.getElementById("operator").value;
+            let answer;
+            if (operator === "add") {
+                answer = float1 + float2;
+            } else if (operator === "subtract") {
+                answer = float1 - float2;
+            } else if (operator === "multiply") {
+                answer = float1 * float2;
+            } else if (operator === "divide") {
+                answer = float1 / float2
+            }
+            return document.getElementById("result").innerHTML = answer;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
